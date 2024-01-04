@@ -1,0 +1,81 @@
+.wrapper {
+  width: 750px;
+  background-color: #008000;
+  margin-inline: auto;
+  margin-top: 30px;
+  border: 3px solid white;
+  display: grid;
+  justify-content: center;
+  position: relative;
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  position: absolute;
+  width: 750px;
+  height: 1px;
+  background-color: white;
+}
+
+.wrapper::before {
+  top: 50%;
+}
+
+.wrapper::after {
+  bottom: 50%;
+}
+body {
+  background-color: #809780;
+}
+
+.user {
+  display: grid;
+  justify-content: space-around;
+  text-align: center;
+  width: calc(750px / 2);
+  height: calc(750px / 2);
+}
+.card-slot {
+  height: 130px;
+  width: 100%;
+  margin-inline: auto;
+  border: 3px solid white;
+}
+
+.tablo-slot {
+  display: flex;
+  gap: 250px;
+}
+
+.input-tablo {
+  margin-top: 8px;
+  width: 40px;
+}
+.more {
+  background-color: red;
+  transition: 0.2s ease-in-out;
+}
+
+.more:hover {
+  background-color: rgb(237, 160, 160);
+}
+
+.enough {
+  background-color: rgb(40, 237, 40);
+}
+
+.enough:hover {
+  background-color: rgb(127, 243, 127);
+}
+.btn {
+  padding: 3px 9px;
+  color: rgb(45, 41, 41);
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.label-input-slot {
+  width: 175px;
+}
