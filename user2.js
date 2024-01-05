@@ -3,6 +3,7 @@ let cardSlotUser2 = document.getElementById('card-slotUser2');
 let cardSumTotalIdUser2 = document.getElementById('cardSumTotalUser2')
 let cardRandomSlotUser2 = [];
 let cardSumTotalUser2;
+let totalUs2;
 
 
 btnStartUser2.onclick = function () {
