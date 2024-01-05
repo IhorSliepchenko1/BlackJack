@@ -1,10 +1,18 @@
-const card =
-
-    ['J', 'Q', 'K', 'A', 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
+const card = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+let renderVS = document.getElementById('renderVS')
 function arrayRandElement(arr) {
     let rand = Math.floor(Math.random() * arr.length);
     return arr[rand];
 }
 
-console.log(arrayRandElement(card))
+
+function endGames() {
+    if (cardSumTotal > cardSumTotalUser2) {
+        renderVS.innerHTML = 'User1-WIN'
+    } else if (cardSumTotal < cardSumTotalUser2) {
+        renderVS.innerHTML = 'User2-WIN'
+    } else if (cardSumTotal === cardSumTotalUser2) {
+        renderVS.innerHTML = 'Draw'
+    }
+}
+

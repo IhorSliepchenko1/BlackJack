@@ -1,5 +1,5 @@
 .wrapper {
-  width: 750px;
+  width: 600px;
   background-color: #008000;
   margin-inline: auto;
   margin-top: 30px;
@@ -13,7 +13,7 @@
 .wrapper::after {
   content: "";
   position: absolute;
-  width: 750px;
+  width: 600px;
   height: 1px;
   background-color: white;
 }
@@ -41,6 +41,9 @@ body {
   width: 100%;
   margin-inline: auto;
   border: 3px solid white;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 .tablo-slot {
@@ -52,17 +55,21 @@ body {
   margin-top: 8px;
   width: 40px;
 }
-.more {
+/* .more {
   background-color: red;
   transition: 0.2s ease-in-out;
 }
 
 .more:hover {
   background-color: rgb(237, 160, 160);
-}
+} */
 
 .enough {
   background-color: rgb(40, 237, 40);
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 .enough:hover {
@@ -78,4 +85,27 @@ body {
 
 .label-input-slot {
   width: 175px;
+}
+
+.cardSumTotal {
+  text-align: center;
+  width: 35px;
+}
+
+.ring {
+  position: relative;
+  z-index: 999;
+  width: 250px;
+  height: 40px;
+  background-color: rgb(113, 240, 16);
+  margin-inline: auto;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -12px;
+  margin-bottom: 5px;    display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -12px;
 }

@@ -12,13 +12,29 @@
       <div class="user-1 user">
         <p>ИГРОВОЕ ПОЛЕ: USER-1</p>
 
-        <div class="card-slot"></div>
-        <div class="btn-slot">
-          <button class="more btn">Ещё</button>
-          <button class="enough btn">Хватит</button>
+        <div class="card-slot" id="card-slot"></div>
+        <div class="total">
+          <label for="cardSumTotal">Сума:</label>
+          <input
+            type="number"
+            name="cardSumTotal"
+            id="cardSumTotal"
+            class="cardSumTotal"
+          />
         </div>
 
-        <div class="tablo-slot">
+        <div class="btn-slot">
+          <button
+            class="start btn"
+            onclick="arrayRandElement(card)"
+            id="btnStart"
+          >
+            Ещё
+          </button>
+          <!-- <button class="enough btn">Хватит</button> -->
+        </div>
+
+        <!-- <div class="tablo-slot">
           <div class="label-input-slot">
             <label for="lose">К-во поражений:</label>
             <input class="input-tablo" type="number" name="lose" />
@@ -27,18 +43,38 @@
             <label for="win">К-во побед:</label>
             <input class="input-tablo" type="number" name="win" />
           </div>
-        </div>
+        </div> -->
+      </div>
+      <div>
+        <div class="ring" id="renderVS"></div>
+        <button class="enough btn" onclick="endGames()">ЗАКОНЧИЛИ</button>
       </div>
       <div class="user-2 user">
-        <p>ИГРОВОЕ ПОЛЕ: USER-2</p>
+        <p>ИГРОВОЕ ПОЛЕ: USER-1</p>
 
-        <div class="card-slot"></div>
-        <div class="btn-slot">
-          <button class="more btn">Ещё</button>
-          <button class="enough btn">Хватит</button>
+        <div class="card-slot" id="card-slotUser2"></div>
+        <div class="total">
+          <label for="cardSumTotal">Сума:</label>
+          <input
+            type="number"
+            name="cardSumTotal"
+            id="cardSumTotalUser2"
+            class="cardSumTotal"
+          />
         </div>
 
-        <div class="tablo-slot">
+        <div class="btn-slot">
+          <button
+            class="start btn"
+            onclick="arrayRandElement(card)"
+            id="btnStartUser2"
+          >
+            Ещё
+          </button>
+          <!-- <button class="enough btn">Хватит</button> -->
+        </div>
+
+        <!-- <div class="tablo-slot">
           <div class="label-input-slot">
             <label for="lose">К-во поражений:</label>
             <input class="input-tablo" type="number" name="lose" />
@@ -47,9 +83,11 @@
             <label for="win">К-во побед:</label>
             <input class="input-tablo" type="number" name="win" />
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <script src="script.js"></script>
+    <script src="user1.js"></script>
+    <script src="user2.js"></script>
   </body>
 </html>
