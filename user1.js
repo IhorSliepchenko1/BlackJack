@@ -18,3 +18,8 @@ btnStart.onclick = function () {
     }
 };
 
+
+function user1End() {
+    totalUs1 = cardSumTotal
+    console.log(totalUs1)
+}

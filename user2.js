@@ -20,3 +20,9 @@ btnStartUser2.onclick = function () {
 
 };
 
+
+function user2End() {
+    totalUs2 = cardSumTotalUser2
+    console.log(totalUs2)
+    return endGames()
+} 

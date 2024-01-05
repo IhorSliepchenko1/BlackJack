@@ -5,19 +5,6 @@ function arrayRandElement(arr) {
     return arr[rand];
 }
 
-
-function user1End() {
-    totalUs1 = cardSumTotal
-    console.log(totalUs1)
-}
-
-function user2End() {
-    totalUs2 = cardSumTotalUser2
-    console.log(totalUs2)
-    return endGames()
-}
-
-
 function endGames() {
     if (cardSumTotal > cardSumTotalUser2) {
         renderVS.innerHTML = 'User1-WIN'
