@@ -8,6 +8,7 @@
     <title>Blackjack</title>
   </head>
   <body>
+    <button id="newGame" onclick="funNewGame()">NEW GAME</button>
     <div class="wrapper">
       <div class="user-1 user">
         <p>ИГРОВОЕ ПОЛЕ: USER-1</p>
@@ -33,21 +34,9 @@
           </button>
           <button class="enough btn" onclick="user1End()">Хватит</button>
         </div>
-
-        <!-- <div class="tablo-slot">
-          <div class="label-input-slot">
-            <label for="lose">К-во поражений:</label>
-            <input class="input-tablo" type="number" name="lose" />
-          </div>
-          <div class="label-input-slot">
-            <label for="win">К-во побед:</label>
-            <input class="input-tablo" type="number" name="win" />
-          </div>
-        </div> -->
       </div>
       <div>
         <div class="ring" id="renderVS"></div>
-        <!-- <button class="enough btn" onclick="endGames()">ЗАКОНЧИЛИ</button> -->
       </div>
       <div class="user-2 user">
         <p>ИГРОВОЕ ПОЛЕ: USER-2</p>
@@ -73,17 +62,6 @@
           </button>
           <button class="enough btn" onclick="user2End()">Хватит</button>
         </div>
-
-        <!-- <div class="tablo-slot">
-          <div class="label-input-slot">
-            <label for="lose">К-во поражений:</label>
-            <input class="input-tablo" type="number" name="lose" />
-          </div>
-          <div class="label-input-slot">
-            <label for="win">К-во побед:</label>
-            <input class="input-tablo" type="number" name="win" />
-          </div>
-        </div> -->
       </div>
     </div>
     <script src="script.js"></script>

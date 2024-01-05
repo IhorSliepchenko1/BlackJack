@@ -35,6 +35,7 @@ body {
   text-align: center;
   width: calc(750px / 2);
   height: calc(750px / 2);
+  color: rgb(47, 48, 50);
 }
 .card-slot {
   height: 130px;
@@ -55,25 +56,18 @@ body {
   margin-top: 8px;
   width: 40px;
 }
-/* .more {
-  background-color: red;
-  transition: 0.2s ease-in-out;
-}
-
-.more:hover {
-  background-color: rgb(237, 160, 160);
-} */
 
 .enough {
-  background-color: rgb(40, 237, 40);
+  background-color: red;
   margin-inline: auto;
   display: flex;
   justify-content: center;
   margin-top: 15px;
+  color: white;
 }
 
 .enough:hover {
-  background-color: rgb(127, 243, 127);
+  background-color: rgb(243, 127, 152);
 }
 .btn {
   padding: 3px 9px;
@@ -106,4 +100,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#newGame {
+  cursor: pointer;
+  display: flex;
+  margin-inline: auto;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: green;
+  transition: .2s ease-in-out;
+
+  &:hover{
+    background-color: red;
+    color: white;
+  }
 }
