@@ -1,10 +1,18 @@
-.wrapper {
-  width: 600px;
-  background-color: #008000;
+
+.container {
   margin-inline: auto;
+  display: grid;
+  justify-content: center;
+}
+
+.wrapper {
+  max-width: 600px;
+  background-color: #008000;
   margin-top: 30px;
   border: 3px solid white;
   display: grid;
+  margin-inline: auto;
+
   justify-content: center;
   position: relative;
 }
@@ -13,7 +21,7 @@
 .wrapper::after {
   content: "";
   position: absolute;
-  width: 600px;
+  width: 100%;
   height: 1px;
   background-color: white;
 }
@@ -111,6 +119,7 @@ body {
 #newGame {
   cursor: pointer;
   display: flex;
+  justify-content: center;
   margin-inline: auto;
   padding: 10px;
   margin-top: 20px;
@@ -150,4 +159,10 @@ body {
 }
 .A1:hover {
   background-color: rgb(205, 54, 54);
+}
+
+p{
+  display: flex;
+  align-items: center;
+  font-weight: bold;
 }

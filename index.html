@@ -13,68 +13,68 @@
     <title>Blackjack</title>
   </head>
   <body>
-    <button id="newGame" onclick="funNewGame()">NEW GAME</button>
-    <div class="wrapper">
-      <div class="user-1 user">
-        <p>ИГРОВОЕ ПОЛЕ: USER-1</p>
+    <div class="container">
+      <button id="newGame" onclick="funNewGame()">NEW GAME</button>
+      <div class="wrapper">
+        <div class="user-1 user">
+          <p>ИГРОВОЕ ПОЛЕ: USER-1</p>
 
-        <div class="card-slot" id="card-slot"></div>
-        <div class="total">
-          <label for="cardSumTotal">Сума:</label>
-          <input
-            type="number"
-            name="cardSumTotal"
-            id="cardSumTotal"
-            class="cardSumTotal"
-          />
+          <div class="card-slot" id="card-slot"></div>
+          <div class="total">
+            <label for="cardSumTotal">Сума:</label>
+            <input
+              type="number"
+              name="cardSumTotal"
+              id="cardSumTotal"
+              class="cardSumTotal"
+            />
+          </div>
+
+          <div class="btn-slot">
+            <button
+              class="start btn"
+              onclick="arrayRandElement(card)"
+              id="btnStart"
+            >
+              Ещё
+            </button>
+
+            <button class="enough btn" onclick="user1End()">Хватит</button>
+          </div>
         </div>
-
-        <div class="btn-slot">
-          <button
-            class="start btn"
-            onclick="arrayRandElement(card)"
-            id="btnStart"
-          >
-            Ещё
-          </button>
-
-          <button class="enough btn" onclick="user1End()">Хватит</button>
+        <div>
+          <div class="ring" id="renderVS"></div>
         </div>
-      </div>
-      <div>
-        <div class="ring" id="renderVS"></div>
-      </div>
-      <div class="user-2 user">
-        <p>ИГРОВОЕ ПОЛЕ: USER-2</p>
+        <div class="user-2 user">
+          <p>ИГРОВОЕ ПОЛЕ: USER-2</p>
 
-        <div class="card-slot" id="card-slotUser2"></div>
-        <div class="total">
-          <label for="cardSumTotal">Сума:</label>
-          <input
-            type="number"
-            name="cardSumTotal"
-            id="cardSumTotalUser2"
-            class="cardSumTotal"
-          />
-        </div>
+          <div class="card-slot" id="card-slotUser2"></div>
+          <div class="total">
+            <label for="cardSumTotal">Сума:</label>
+            <input
+              type="number"
+              name="cardSumTotal"
+              id="cardSumTotalUser2"
+              class="cardSumTotal"
+            />
+          </div>
 
-        <div class="btn-slot">
-          <button
-            class="start btn"
-            onclick="arrayRandElement(card)"
-            id="btnStartUser2"
-          >
-            Ещё
-          </button>
+          <div class="btn-slot">
+            <button
+              class="start btn"
+              onclick="arrayRandElement(card)"
+              id="btnStartUser2"
+            >
+              Ещё
+            </button>
 
-          <button class="enough btn" onclick="user2End()">Хватит</button>
+            <button class="enough btn" onclick="user2End()">Хватит</button>
+          </div>
         </div>
       </div>
     </div>
     <script src="script.js"></script>
     <script src="user1.js"></script>
     <script src="user2.js"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </body>
 </html>
