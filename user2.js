@@ -4,6 +4,9 @@ let cardSumTotalIdUser2 = document.getElementById('cardSumTotalUser2')
 let cardRandomSlotUser2 = [];
 let cardSumTotalUser2;
 let totalUs2;
+let user2A = document.getElementById('user2A')
+
+
 
 
 btnStartUser2.onclick = function () {
@@ -11,7 +14,16 @@ btnStartUser2.onclick = function () {
     cardRandomSlotUser2.push(randomCardUser2);
 
     cardSlotUser2.innerHTML = cardRandomSlotUser2.join(', ');
-    cardSumTotalUser2 = cardRandomSlotUser2.reduce((a, b) => a + b);
+    cardSumTotalUser2 = cardRandomSlotUser2.reduce((a, b) => {
+        if (['K', 'Q', 'J'].includes(b)) {
+            return a + 10;
+        } else if (b === 'A') {
+            // const isElevenUser2 = confirm('Туз = 11, нажмите "OK" / Туз = 1, нажмите "Cancel" ');
+            return a + 11;
+        } else {
+            return a + b;
+        }
+    }, 0);
     cardSumTotalIdUser2.value = cardSumTotalUser2
 
     if (cardSumTotalUser2 > 21) {

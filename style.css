@@ -63,7 +63,13 @@ body {
   display: flex;
   justify-content: center;
   margin-top: 15px;
-  color: white;
+  transition: 0.2s ease-in-out;
+}
+.start {
+  transition: 0.2s ease-in-out;
+}
+.start:hover {
+  background-color: rgb(111, 227, 61);
 }
 
 .enough:hover {
@@ -83,7 +89,7 @@ body {
 
 .cardSumTotal {
   text-align: center;
-  width: 35px;
+  width: 45px;
 }
 
 .ring {
@@ -109,10 +115,39 @@ body {
   padding: 10px;
   margin-top: 20px;
   background-color: green;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+#newGame:hover {
+  background-color: red;
+  color: white;
+}
+.A {
+  border: 1px solid;
+  height: 75px;
+  margin-top: 10px;
+  padding: 5px;
+  background: rgb(234, 255, 0);
+}
 
-  &:hover{
-    background-color: red;
-    color: white;
-  }
+.A11,
+.A1 {
+  cursor: pointer;
+}
+.A11 {
+  background-color: rgb(51, 198, 51);
+  width: 30px;
+  transition: 0.2s ease-in-out;
+}
+
+.A11:hover {
+  background-color: rgb(22, 179, 22);
+}
+
+.A1 {
+  background-color: rgb(237, 115, 115);
+  width: 30px;
+  transition: 0.2s ease-in-out;
+}
+.A1:hover {
+  background-color: rgb(205, 54, 54);
 }
