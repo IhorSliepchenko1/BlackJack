@@ -18,8 +18,21 @@ btnStartUser2.onclick = function () {
         if (['K', 'Q', 'J'].includes(b)) {
             return a + 10;
         } else if (b === 'A') {
-            // const isElevenUser2 = confirm('Туз = 11, нажмите "OK" / Туз = 1, нажмите "Cancel" ');
+            // let value2;
+
+            // do {
+            //     let userInput2 = prompt('Туз = 11, введите "11" / Туз = 1, введите "1"');
+            //     if (userInput2 === "11" || userInput2 === "1") {
+            //         value2 = parseInt(userInput2, 10);
+            //     } else {
+            //         alert('Пожалуйста, введите только "11" или "1".');
+            //     }
+            // } while (value2 === undefined);
+
+            // return a + value2;
+
             return a + 11;
+
         } else {
             return a + b;
         }
@@ -27,14 +40,58 @@ btnStartUser2.onclick = function () {
     cardSumTotalIdUser2.value = cardSumTotalUser2
 
     if (cardSumTotalUser2 > 21) {
-        (renderVS.innerHTML = 'User1-WIN') && (alert('Перебор!!! Для вас конец игры'))
+        (renderVS.innerHTML = 'User1-WIN') && (alert('Перебор!!! Для вас конец игры') || user2End())
     }
 
 };
-
+let slotWin;
 
 function user2End() {
     totalUs2 = cardSumTotalUser2
     console.log(totalUs2)
-    return endGames()
-} 
+
+    const localStor = () => {
+        let existingData = localStorage.getItem('winner');
+        let slotArr = [];
+        if (existingData) {
+            slotArr = JSON.parse(existingData);
+        }
+        slotArr.push(renderTextContent());
+        localStorage.setItem('winner', JSON.stringify(slotArr));
+
+        slotWin = slotArr
+        console.log(slotWin);
+
+        let win1Filter = slotWin.filter((word) => word === 'User1-WIN')
+        console.log(win1Filter)
+
+        let win2Filter = slotWin.filter((word) => word === 'User2-WIN')
+        console.log(win2Filter)
+
+        let win1 = document.getElementById('win-1')
+        let win2 = document.getElementById('win-2')
+
+        win1.value = win1Filter.length
+        win2.value = win2Filter.length
+
+        if (parseInt(win1.value) >= 10) {
+            [alert('USER-1 ПОБЕДИЛ!!!'), (dellLocalStor()), (funNewGame())].map((x) => x)
+
+        } else if (parseInt(win2.value) >= 10) {
+            [alert('USER-2 ПОБЕДИЛ!!!'), (dellLocalStor()), (funNewGame())].map((x) => x)
+        } else ('Что-то пошло не так')
+
+        return slotArr;
+    };
+
+
+    const arrFunc = [renderTextContent(), endGames(), localStor()].map((x) => x);
+    return arrFunc;
+}
+
+function dellLocalStor() {
+    localStorage.removeItem('winner');
+}
+
+
+

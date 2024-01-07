@@ -25,8 +25,24 @@ btnStart.onclick = function () {
         if (['K', 'Q', 'J'].includes(b)) {
             return a + 10;
         } else if (b === 'A') {
-            // const isEleven = confirm('Туз = 11, нажмите "OK" / Туз = 1, нажмите "Cancel" ');
+
+            // let value;
+
+            // do {
+            //     let userInput = prompt('Туз = 11, введите "11" / Туз = 1, введите "1"');
+            //     if (userInput === "11" || userInput === "1") {
+            //         value = parseInt(userInput, 10);
+            //     } else {
+            //         alert('Пожалуйста, введите только "11" или "1".');
+            //     }
+            // } while (value === undefined);
+
+            // return a + value;
+
             return a + 11;
+
+
+
         } else {
             return a + b;
         }
@@ -34,7 +50,7 @@ btnStart.onclick = function () {
     cardSumTotalId.value = cardSumTotal
 
     if (cardSumTotal > 21) {
-        (renderVS.innerHTML = 'User1-WIN') && (alert('Перебор!!! Для вас конец игры'))
+        (renderVS.innerHTML = 'User1-WIN') && (alert('Перебор!!! Для вас конец игры') || user2End())
     }
 
 };
@@ -44,3 +60,7 @@ function user1End() {
     totalUs1 = cardSumTotal
     console.log(totalUs1)
 }
+
+
+
+

@@ -14,10 +14,30 @@
   </head>
   <body>
     <div class="container">
+      <div class="title">
+        <h1>Игра длится до 10 побед!</h1>
+        <p>Или пока не обнулите партию</p>
+      </div>
       <button id="newGame" onclick="funNewGame()">NEW GAME</button>
+      <button
+        id="dellLocalStor"
+        class="dellLocalStor"
+        onclick="dellLocalStor()"
+      >
+        Обнулить
+      </button>
       <div class="wrapper">
         <div class="user-1 user">
           <p>ИГРОВОЕ ПОЛЕ: USER-1</p>
+          <div class="win-panel">
+            <label for="win-1">Победы USER-1</label>
+            <input
+              type="number"
+              name="win-1"
+              style="width: 50px; text-align: center;"
+              id="win-1"
+            />
+          </div>
 
           <div class="card-slot" id="card-slot"></div>
           <div class="total">
@@ -47,7 +67,15 @@
         </div>
         <div class="user-2 user">
           <p>ИГРОВОЕ ПОЛЕ: USER-2</p>
-
+          <div class="win-panel">
+            <label for="win-2">Победы USER-1</label>
+            <input
+              type="number"
+              name="win-2"
+              style="width: 50px; text-align: center;"
+              id="win-2"
+            />
+          </div>
           <div class="card-slot" id="card-slotUser2"></div>
           <div class="total">
             <label for="cardSumTotal">Сума:</label>
