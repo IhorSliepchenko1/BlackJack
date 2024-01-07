@@ -68,16 +68,64 @@ function user2End() {
         let win2Filter = slotWin.filter((word) => word === 'User2-WIN')
         console.log(win2Filter)
 
+
+
+        let wValue1 = win1Filter.length
+        let wValue2 = win2Filter.length
+
+
+
+        let existingDataCount = localStorage.getItem('count_win1');
+        let existingDataCount2 = localStorage.getItem('count_win2');
+        let slotArrCount = [];
+        let slotArrCount2 = [];
+        if (existingDataCount) {
+            slotArrCount = JSON.parse(existingDataCount);
+        };
+        if (existingDataCount2) {
+            slotArrCount2 = JSON.parse(existingDataCount2);
+        }
+        slotArrCount.push(wValue1);
+        localStorage.setItem('count_win1', JSON.stringify(slotArrCount));
+
+        slotArrCount2.push(wValue2);
+        localStorage.setItem('count_win2', JSON.stringify(slotArrCount2));
+
+        let slotArrCountLength = slotArrCount.length
+        let slotArrCountLength2 = slotArrCount2.length
+
+        console.log(slotArrCountLength)
+
         let win1 = document.getElementById('win-1')
         let win2 = document.getElementById('win-2')
 
-        win1.value = win1Filter.length
-        win2.value = win2Filter.length
+        let win1Value = localStorage.getItem('count_win1_v');
+        if (win1Value) {
+            win1ValueSlotArrCount = JSON.parse(win1Value);
+        };
 
-        if (parseInt(win1.value) >= 10) {
+        let w1Value = (slotArrCount[slotArrCountLength - 1])
+        localStorage.setItem('count_win1_v', JSON.stringify(win1.value = w1Value));
+
+        let win1Value2 = localStorage.getItem('count_win2_v');
+        if (win1Value2) {
+            win1ValueSlotArrCount2 = JSON.parse(win1Value);
+        };
+
+        let w2Value = (slotArrCount2[slotArrCountLength2 - 1])
+        localStorage.setItem('count_win2_v', JSON.stringify(win2.value = w2Value));
+
+
+
+
+
+
+
+
+        if (parseInt(wValue1) >= 10) {
             [alert('USER-1 ПОБЕДИЛ!!!'), (dellLocalStor()), (funNewGame())].map((x) => x)
 
-        } else if (parseInt(win2.value) >= 10) {
+        } else if (parseInt(wValue2) >= 10) {
             [alert('USER-2 ПОБЕДИЛ!!!'), (dellLocalStor()), (funNewGame())].map((x) => x)
         } else ('Что-то пошло не так')
 
@@ -91,6 +139,11 @@ function user2End() {
 
 function dellLocalStor() {
     localStorage.removeItem('winner');
+    localStorage.removeItem('count_win1');
+    localStorage.removeItem('count_win2');
+    localStorage.removeItem('count_win1_v');
+    localStorage.removeItem('count_win2_v');
+
 }
 
 
