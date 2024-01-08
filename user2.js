@@ -72,6 +72,8 @@ function dellLocalStor() {
     localStorage.removeItem('winner');
     localStorage.removeItem('win1');
     localStorage.removeItem('win2');
+
+    return funNewGame()
 }
 
 let win1 = document.getElementById('win-1');

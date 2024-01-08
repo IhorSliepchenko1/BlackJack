@@ -6,15 +6,6 @@ let cardSumTotal;
 let totalUs1;
 let user1A = document.getElementById('user1A')
 
-function a11User1Click() {
-    return 11;
-}
-
-function a1User1Click() {
-    return 1;
-}
-
-
 btnStart.onclick = function () {
     let randomCard = arrayRandElement(card);
     cardRandomSlot.push(randomCard);

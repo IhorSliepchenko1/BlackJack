@@ -18,14 +18,20 @@
         <h1>Игра длится до 10 побед!</h1>
         <p>Или пока не обнулите партию</p>
       </div>
-      <button id="newGame" onclick="funNewGame()">NEW GAME</button>
-      <button
-        id="dellLocalStor"
-        class="dellLocalStor"
-        onclick="dellLocalStor()"
-      >
-        Обнулить
-      </button>
+      <div class="slot-btn">
+        <button class="btn-up" id="newGame" onclick="funNewGame()">
+          NEW GAME
+        </button>
+
+        <button
+          class="btn-up"
+          id="dellLocalStor"
+          class="dellLocalStor"
+          onclick="dellLocalStor()"
+        >
+          DELLETE
+        </button>
+      </div>
       <div class="wrapper">
         <div class="user-1 user">
           <p>ИГРОВОЕ ПОЛЕ: USER-1</p>
@@ -100,8 +106,6 @@
           </div>
         </div>
       </div>
-    </div>
-
     <script src="script.js"></script>
     <script src="user1.js"></script>
     <script src="user2.js"></script>
