@@ -1,6 +1,6 @@
 let card = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A'];
 let renderVS = document.getElementById('renderVS')
-let renderTextContent = ((a) => renderVS.textContent)
+let renderTextContent = (() => renderVS.textContent)
 
 const newGame = document.getElementById('newGame')
 
@@ -12,11 +12,19 @@ function arrayRandElement(arr) {
 }
 
 function endGames() {
-    if (cardSumTotal > cardSumTotalUser2) {
-        renderVS.innerHTML = 'User1-WIN'
-    } else if (cardSumTotal < cardSumTotalUser2) {
+    if (cardSumTotal > 21) {
         renderVS.innerHTML = 'User2-WIN'
-    } else if (cardSumTotal === cardSumTotalUser2) {
+    }
+    else if (cardSumTotalUser2 > 21) {
+        renderVS.innerHTML = 'User1-WIN'
+    }
+    else if (cardSumTotal > cardSumTotalUser2) {
+        renderVS.innerHTML = 'User1-WIN'
+    }
+    else if (cardSumTotal < cardSumTotalUser2) {
+        renderVS.innerHTML = 'User2-WIN'
+    }
+    else if (cardSumTotal === cardSumTotalUser2) {
         renderVS.innerHTML = 'Draw'
     }
 }
