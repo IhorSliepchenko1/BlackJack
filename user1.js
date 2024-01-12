@@ -23,7 +23,7 @@ btnStart.onclick = function () {
     cardSumTotalId.value = cardSumTotal
 
     if (cardSumTotal > 21) {
-        (renderVS.innerHTML = 'User1-WIN') && (alert('Перебор!!! Для вас конец игры') || user2End())
+        (renderVS.innerHTML = 'User1-WIN') && (alert('Перебор!!! Для вас конец игры') || fullEnd())
     }
 };
 
@@ -31,7 +31,5 @@ function user1End() {
     totalUs1 = cardSumTotal
     console.log(totalUs1)
 }
-
-
 
 

@@ -38,6 +38,7 @@
           <div class="win-panel">
             <label for="win-1">Победы USER-1</label>
             <input
+              readonly
               type="number"
               name="win-1"
               style="width: 50px; text-align: center;"
@@ -49,6 +50,7 @@
           <div class="total">
             <label for="cardSumTotal">Сума:</label>
             <input
+              readonly
               type="number"
               name="cardSumTotal"
               id="cardSumTotal"
@@ -76,6 +78,7 @@
           <div class="win-panel">
             <label for="win-2">Победы USER-2</label>
             <input
+              readonly
               type="number"
               name="win-2"
               style="width: 50px; text-align: center;"
@@ -86,6 +89,7 @@
           <div class="total">
             <label for="cardSumTotal">Сума:</label>
             <input
+              readonly
               type="number"
               name="cardSumTotal"
               id="cardSumTotalUser2"
@@ -102,10 +106,11 @@
               Ещё
             </button>
 
-            <button class="enough btn" onclick="user2End()">Хватит</button>
+            <button class="enough btn" onclick="fullEnd()">Хватит</button>
           </div>
         </div>
       </div>
+    </div>
     <script src="script.js"></script>
     <script src="user1.js"></script>
     <script src="user2.js"></script>
