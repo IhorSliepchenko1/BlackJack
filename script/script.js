@@ -30,6 +30,8 @@ function endGames() {
 }
 
 
+
+
 let slotWin;
 function fullEnd() {
     totalUs2 = cardSumTotalUser2

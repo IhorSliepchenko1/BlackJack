@@ -5,28 +5,50 @@ let cardRandomSlotUser2 = [];
 let cardSumTotalUser2;
 let totalUs2;
 let user2A = document.getElementById('user2A')
+let arrString2;
+let arrNumber2;
 
-btnStartUser2.onclick = function () {
-    let randomCardUser2 = arrayRandElement(card);
-    cardRandomSlotUser2.push(randomCardUser2);
+const forEachArr2 = () => {
+    arrString2 = [];
+    arrNumber2 = [];
+
+    cardRandomSlotUser2.forEach((el) => {
+        if (typeof el === 'string') {
+            if (['K', 'Q', 'J'].includes(el)) {
+                el = 10;
+            } else if (el === 'A') {
+                let conf2 = confirm('OK = 11 || Cancel = 1');
+                el = conf2 ? 11 : 1;
+            }
+            arrString2.push(el);
+        } else if (typeof el === 'number') {
+            arrNumber2.push(el);
+        }
+    });
+    console.log('string', arrString2);
+    console.log('number', arrNumber2);
+};
+
+btnStartUser2.addEventListener('click', () => {
+    let randomCardUs2 = arrayRandElement(card);
+    cardRandomSlotUser2.push(randomCardUs2);
+
+    forEachArr2();
+
+    let concatArrUs2 = arrString2.concat(arrNumber2);
+
+    cardSumTotalUser2 = concatArrUs2.reduce((a, b) => a + b);
+    cardSumTotalIdUser2.value = cardSumTotalUser2;
 
     cardSlotUser2.innerHTML = cardRandomSlotUser2.join(', ');
-    cardSumTotalUser2 = cardRandomSlotUser2.reduce((a, b) => {
-        if (['K', 'Q', 'J'].includes(b)) {
-            return a + 10;
-        }
-        else if (b === 'A') {
-            return a + 11;
-        }
-        else {
-            return a + b;
-        }
-    }, 0);
-
-    cardSumTotalIdUser2.value = cardSumTotalUser2
     if (cardSumTotalUser2 > 21) {
-        (renderVS.innerHTML = 'User1-WIN') && (alert('Перебор!!! Для вас конец игры') || fullEnd() && funNewGame())
+        renderVS.innerHTML = 'User1-WIN';
+        alert('Перебор!!! Для вас конец игры');
+        fullEnd();
+        funNewGame();
     }
-};
+});
+
+
 
 

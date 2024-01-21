@@ -1,35 +1,65 @@
 let btnStart = document.getElementById('btnStart');
 let cardSlot = document.getElementById('card-slot');
-let cardSumTotalId = document.getElementById('cardSumTotal')
+let cardSumTotalId = document.getElementById('cardSumTotal');
 let cardRandomSlot = [];
 let cardSumTotal;
 let totalUs1;
-let user1A = document.getElementById('user1A')
+let user1A = document.getElementById('user1A');
+let arrString;
+let arrNumber;
 
-btnStart.onclick = function () {
+
+
+btnStart.addEventListener('click', () => {
     let randomCard = arrayRandElement(card);
     cardRandomSlot.push(randomCard);
 
-    cardSlot.innerHTML = cardRandomSlot.join(', ');
-    cardSumTotal = cardRandomSlot.reduce((a, b) => {
-        if (['K', 'Q', 'J'].includes(b)) {
-            return a + 10;
-        } else if (b === 'A') {
-            return a + 11;
-        } else {
-            return a + b;
-        }
-    }, 0);
-    cardSumTotalId.value = cardSumTotal
+    forEachArr();
+    let concatArr = arrNumber.concat(arrString);
 
+    cardSumTotal = concatArr.reduce((a, b) => a + b);
+    cardSumTotalId.value = cardSumTotal;
+
+    cardSlot.innerHTML = cardRandomSlot.join(', ');
     if (cardSumTotal > 21) {
-        (renderVS.innerHTML = 'User1-WIN') && (alert('Перебор!!! Для вас конец игры') || fullEnd() && funNewGame())
+        renderVS.innerHTML = 'User1-WIN';
+        alert('Перебор!!! Для вас конец игры');
+        fullEnd();
+        funNewGame();
     }
+    console.log('concatArr', concatArr);
+
+});
+
+
+
+const forEachArr = () => {
+    arrString = [];
+    arrNumber = [];
+
+    cardRandomSlot.forEach((el) => {
+        if (typeof el === 'string') {
+            if (['K', 'Q', 'J'].includes(el)) {
+                el = 10;
+                return arrString.push(el);
+
+            } else if (el === 'A') {
+                let conf = confirm('OK = 11 || Cancel = 1');
+                el = conf ? 11 : 1;
+                return arrString.push(el);
+            }
+        } else if (typeof el === 'number') {
+            arrNumber.push(el);
+        }
+    });
+    console.log('string', arrString);
+    console.log('number', arrNumber);
 };
 
+
 function user1End() {
-    totalUs1 = cardSumTotal
-    console.log(totalUs1)
+    totalUs1 = cardSumTotal;
+    console.log(totalUs1);
 }
 
 
