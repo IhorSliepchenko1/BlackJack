@@ -41,13 +41,11 @@ const forEachArr = () => {
         if (typeof el === 'string') {
             if (['K', 'Q', 'J'].includes(el)) {
                 el = 10;
-                return arrString.push(el);
-
             } else if (el === 'A') {
                 let conf = confirm('OK = 11 || Cancel = 1');
                 el = conf ? 11 : 1;
-                return arrString.push(el);
             }
+            arrString.push(el);
         } else if (typeof el === 'number') {
             arrNumber.push(el);
         }
