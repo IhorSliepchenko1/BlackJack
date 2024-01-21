@@ -25,7 +25,7 @@ btnStartUser2.onclick = function () {
 
     cardSumTotalIdUser2.value = cardSumTotalUser2
     if (cardSumTotalUser2 > 21) {
-        (renderVS.innerHTML = 'User1-WIN') && (alert('Перебор!!! Для вас конец игры') || fullEnd())
+        (renderVS.innerHTML = 'User1-WIN') && (alert('Перебор!!! Для вас конец игры') || fullEnd() && funNewGame())
     }
 };
 
