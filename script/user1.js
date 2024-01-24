@@ -31,25 +31,51 @@ btnStart.addEventListener('click', () => {
 
 });
 
-
-
 const forEachArr = () => {
     arrString = [];
     arrNumber = [];
 
-    cardRandomSlot.forEach((el) => {
+    cardRandomSlot.forEach((el, index) => {
         if (typeof el === 'string') {
             if (['K', 'Q', 'J'].includes(el)) {
                 el = 10;
             } else if (el === 'A') {
-                let conf = confirm('OK = 11 || Cancel = 1');
-                el = conf ? 11 : 1;
+                el = 11
+                // const func = () => {
+                //     let conf = confirm('OK = 11');
+                //     if (conf === true) {
+                //         el = 11
+                //         console.log(el)
+
+                //         setTimeout(() => {
+                //             el = ''
+                //             console.log(el)
+                //         }, 1000);
+
+                //     } else {
+                //         el = 1
+                //         console.log(el)
+                //         setTimeout(() => {
+                //             el = ''
+                //             console.log('el', el)
+                //             conf === true
+                //             console.log('conf', conf)
+                //         }, 1000);
+
+
+                //     }
+
+
+                // };
+
+                // func();
             }
             arrString.push(el);
         } else if (typeof el === 'number') {
             arrNumber.push(el);
         }
     });
+
     console.log('string', arrString);
     console.log('number', arrNumber);
 };
